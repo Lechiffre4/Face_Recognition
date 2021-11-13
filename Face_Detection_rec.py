@@ -1,3 +1,5 @@
+"""This program record when a face appear in front of the webcam"""
+
 import cv2
 import time
 import datetime
@@ -15,7 +17,7 @@ SECONDS_TO_RECORD = 5
 
 
 fourcc = cv2.VideoWriter_fourcc(*"mp4v")
-
+video_file_path = input("Enter the path of the videos file : ")
 
 while True:
     _, frame = cap.read()
@@ -32,7 +34,7 @@ while True:
         else:
             detection = True
             current_time = datetime.datetime.now().strftime("%d-%m-%Y-%H-%M-%S")
-            out = cv2.VideoWriter("vid_"+current_time+".mp4", fourcc,20,frame_size)
+            out = cv2.VideoWriter(video_file_path+"\vid_"+current_time+".mp4", fourcc,20,frame_size)
             print("rec...")
     elif detection:
         if timer_started:
