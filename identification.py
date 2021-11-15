@@ -116,6 +116,8 @@ while True:
         input("Press enter to continue...")
 
 
+
+    #launch the algorithm
     if (answer == 'd'):
 
         while True:
@@ -159,7 +161,8 @@ while True:
 
         input("Press enter to continue...")
 
-    if (answer=='q'):
+    #quit the program
+    if (answer=='e'):
         break
 
 video_capture.release()
