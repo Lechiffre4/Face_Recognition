@@ -34,7 +34,7 @@ while True:
         else:
             detection = True
             current_time = datetime.datetime.now().strftime("%d-%m-%Y-%H-%M-%S")
-            out = cv2.VideoWriter(video_file_path+"\vid_"+current_time+".mp4", fourcc,20,frame_size)
+            out = cv2.VideoWriter(video_file_path+'/'+"vid_"+current_time+".mp4", fourcc,20,frame_size)
             print("rec...")
     elif detection:
         if timer_started:
