@@ -4,6 +4,7 @@ import cv2
 import os 
 
 os.system('cls')
+
 pics = os.listdir('./known_faces')
 known_faces_encodings = []
 known_faces_names = []
@@ -120,10 +121,10 @@ while True:
         while True:
             ret, frame = video_capture.read()
             rgb_frame = frame[:,:,::-1]
-            cv2.imshow('Cam',frame)
+
             face_locations = fr.face_locations(rgb_frame)
             face_encodings = fr.face_encodings(rgb_frame,face_locations)
-            cv2.imshow('Cam',frame)
+
             for (top,right,bottom,left), face_encoding in zip(face_locations,face_encodings):
                 matches = fr.compare_faces(known_faces_encodings,face_encoding)
                 name = "Unknown"
